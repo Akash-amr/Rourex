@@ -16,10 +16,16 @@ html {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body class="bg-gray-50">
 
+
+<body class="bg-gray-50 font-[Poppins]">
+
+  
 <!-- HEADER -->
 <header class="bg-white shadow">
 <div class="max-w-7xl mx-auto flex justify-between items-center p-5">
@@ -86,44 +92,59 @@ Learn More →
 <img src="https://picsum.photos/402/300" class="rounded-lg shadow col-span-2" alt="">
 </div>
 
+
+
+
 <div class="flex flex-col justify-center">
 
-<span class="text-green-600 font-semibold uppercase tracking-wide mb-2">
-About
-</span>
+  <!-- LABEL -->
+  <span class="text-green-600 font-semibold uppercase tracking-wide text-sm mb-3">
+    About
+  </span>
 
-<h2 class="text-4xl font-bold mb-4 leading-tight">
-<span class="block text-green-700">Unknown Wanderlist</span>
-<span class="block bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text">
-Your Journey Into
-</span>
-</h2>
+  <!-- HEADING (MATCHED) -->
+  <h2 class="text-2xl font-semibold mb-3 leading-tight">
+    <span class="block text-green-700">Unknown Wanderlist</span>
+    <span class="block bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text">
+      Your Journey Into
+    </span>
+  </h2>
 
-<p class="text-gray-600 mb-6 leading-relaxed">
-RouteX is your trusted travel companion, dedicated to turning every journey into a memorable experience.
-</p>
+  <!-- PARAGRAPH (MATCHED) -->
+  <p class="text-gray-500 text-base leading-relaxed mb-6">
+    RouteX is your trusted travel companion, dedicated to turning every journey into a memorable experience.
+  </p>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+  <!-- FEATURES -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
-<div>
-<h4 class="font-semibold text-gray-800 mb-2">✔ Safety Guides</h4>
-<ul class="text-gray-600 text-sm space-y-1">
-<li>Expert travel safety tips</li>
-<li>24/7 support</li>
-<li>Verified destinations</li>
-</ul>
+    <div>
+      <h4 class="text-base font-semibold mb-2 text-green-700">
+        ✔ Safety Guides
+      </h4>
+      <ul class="text-gray-500 text-base space-y-1 leading-relaxed">
+        <li>Expert travel safety tips</li>
+        <li>24/7 support</li>
+        <li>Verified destinations</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-base font-semibold mb-2 text-green-700">
+        ✔ Passport Assistance
+      </h4>
+      <ul class="text-gray-500 text-base space-y-1 leading-relaxed">
+        <li>Easy process</li>
+        <li>Quick support</li>
+        <li>Expert help</li>
+      </ul>
+    </div>
+
+  </div>
+
 </div>
 
-<div>
-<h4 class="font-semibold text-gray-800 mb-2">✔ Passport Assistance</h4>
-<ul class="text-gray-600 text-sm space-y-1">
-<li>Easy process</li>
-<li>Quick support</li>
-<li>Expert help</li>
-</ul>
-</div>
 
-</div>
 
 <button class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 w-fit">
 Explore More
@@ -153,92 +174,113 @@ Discover your next
 
 <div class="grid md:grid-cols-3 gap-10">
 
-<div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
+  <!-- CARD 1 -->
+  <div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
 
-<div class="w-16 h-22 mx-auto flex items-center justify-center rounded-full bg-green-100 text-3xl mb-4">
-🍽️
+    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-100 mb-5">
+      <i class="fas fa-utensils text-green-600 text-2xl"></i>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-3 text-green-700">
+      Food & Wine Tours
+    </h3>
+
+    <p class="text-gray-500 text-base leading-relaxed">
+      Savor the world through its flavors. Discover authentic cuisines, local delicacies, and exquisite wines with curated food and wine tours designed for unforgettable experiences.
+    </p>
+
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
+
+    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-100 mb-5">
+      <i class="fas fa-map-marked-alt text-green-600 text-2xl"></i>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-3 text-green-700">
+      Travel Opportunities
+    </h3>
+
+    <p class="text-gray-500 text-base leading-relaxed">
+      Discover curated travel experiences—from adventure and culture to relaxing getaways—with seamless planning and exclusive deals.
+    </p>
+
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
+
+    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-100 mb-5">
+      <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+    </div>
+
+    <h3 class="text-2xl font-semibold mb-3 text-green-700">
+      Solo Travel Planning
+    </h3>
+
+    <p class="text-gray-500 text-base leading-relaxed">
+      Plan your solo adventures with confidence—discover safe destinations, flexible itineraries, and experiences designed just for you.
+    </p>
+
+  </div>
+
 </div>
 
-<h3 class="text-xl font-semibold mb-2 text-green-600">Food & Wine Tours</h3>
-<p class="text-gray-500 text-sm">Savor the world through its flavors. Discover authentic cuisines, local delicacies, and exquisite wines with curated food and wine tours designed for unforgettable experiences.</p>
-</div>
 
-<div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
 
-<div class="w-16 h-22 mx-auto flex items-center justify-center rounded-full bg-green-100 text-3xl mb-4">
-🗺️
-</div>
+<!-- GAP BETWEEN CONTENT & FOOTER -->
+<div class="mt-20"></div>
 
-<h3 class="text-xl font-semibold mb-2 text-green-600">Travel Opportunities</h3>
-<p class="text-gray-500 text-sm">Discover curated travel experiences—from adventure and culture to relaxing getaways—with seamless planning and exclusive deals.</p>
-</div>
 
-<div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
 
-<div class="w-16 h-22 mx-auto flex items-center justify-center rounded-full bg-green-100 text-3xl mb-4">
-🛡️
-</div>
+<footer class="bg-green-900 text-green-100 w-full pt-12 pb-6">
 
-<h3 class="text-xl font-semibold mb-2 text-green-600">Solo Travel Planning</h3>
-<p class="text-gray-500 text-sm">Plan your solo adventures with confidence—discover safe destinations, flexible itineraries, and experiences designed just for you.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<footer class="bg-green-900 text-green-100 pt-12 pb-6">
-
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+  <!-- MAIN CONTENT -->
+  <iv class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
 
     <!-- LOGO + ABOUT -->
     <div>
-      <div class="flex items-center gap-2 mb-4">
-        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white text-lg">
           ✈
         </div>
-        <h2 class="text-xl font-bold text-white">RouteX</h2>
+        <h2 class="text-2xl font-bold text-white">RouteX</h2>
       </div>
 
-      <p class="text-sm text-green-200 leading-relaxed mb-4">
-        RouteX helps you explore the world with ease—offering curated trips, seamless planning, and unforgettable travel experiences.
+      <p class="text-sm text-green-300 leading-relaxed mb-5">
+        Explore the world with RouteX — curated trips, seamless planning, and unforgettable journeys crafted just for you.
       </p>
 
-     
-<!-- SOCIAL MEDIA WITH LOGOS -->
-<div class="mt-6">
+      <h4 class="text-white font-semibold mb-3">Follow us</h4>
 
-  <h4 class="text-white-100 font-semibold mb-3">Follow us</h4>
-
-  <div class="flex gap-4 text-green-300 text-lg">
-        <i class="fab fa-facebook-f hover:text-white cursor-pointer"></i>
-        <i class="fab fa-instagram hover:text-white cursor-pointer"></i>
-        <i class="fab fa-pinterest-p hover:text-white cursor-pointer"></i>
-        <i class="fab fa-linkedin-in hover:text-white cursor-pointer"></i>
+      <div class="flex gap-4 text-lg">
+        <i class="fab fa-facebook-f hover:text-white cursor-pointer transition"></i>
+        <i class="fab fa-instagram hover:text-white cursor-pointer transition"></i>
+        <i class="fab fa-pinterest-p hover:text-white cursor-pointer transition"></i>
+        <i class="fab fa-linkedin-in hover:text-white cursor-pointer transition"></i>
       </div>
-
-</div>
     </div>
 
-    <!-- SERVICE MENU -->
+    <!-- SERVICES -->
     <div>
-      <h3 class="text-white font-semibold mb-4">Service Menu</h3>
-      <ul class="space-y-2 text-sm">
-        <li>✔ Travel Planning</li>
-        <li>✔ Solo Trips</li>
-        <li>✔ Food Tours</li>
-        <li>✔ Safety Guides</li>
+      <h3 class="text-white font-semibold mb-4">Services</h3>
+      <ul class="space-y-2 text-sm text-green-300">
+        <li class="hover:text-white cursor-pointer">Travel Planning</li>
+        <li class="hover:text-white cursor-pointer">Solo Trips</li>
+        <li class="hover:text-white cursor-pointer">Food Tours</li>
+        <li class="hover:text-white cursor-pointer">Safety Guides</li>
       </ul>
     </div>
 
-    <!-- USEFUL LINKS -->
+    <!-- LINKS -->
     <div>
-      <h3 class="text-white font-semibold mb-4">Useful Links</h3>
-      <ul class="space-y-2 text-sm">
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text-sm text-green-300">
         <li><a href="#" class="hover:text-white">Latest News</a></li>
         <li><a href="#" class="hover:text-white">Careers</a></li>
         <li><a href="#" class="hover:text-white">Support</a></li>
-        <li><a href="#" class="hover:text-white">Contact</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
       </ul>
     </div>
 
@@ -247,37 +289,35 @@ Discover your next
       <h3 class="text-white font-semibold mb-4">Gallery</h3>
 
       <div class="grid grid-cols-3 gap-2">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="rounded-lg" alt="">
-        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" class="rounded-lg" alt="">
-
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="rounded-lg hover:scale-105 transition" alt="">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="rounded-lg hover:scale-105 transition" alt="">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98" class="rounded-lg hover:scale-105 transition" alt="">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" class="rounded-lg hover:scale-105 transition" alt="">
+        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" class="rounded-lg hover:scale-105 transition" alt="">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" class="rounded-lg hover:scale-105 transition" alt="">
       </div>
     </div>
 
   </div>
 
-  <!-- BOTTOM BAR -->
-  <div class="border-t border-green-800 mt-10 pt-4 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-green-300">
+  <!-- FULL WIDTH BORDER -->
+  <div class="border-t border-green-800 mt-10"></div>
 
-      <p>© 2026 RouteX | All Rights Reserved</p>
+  <!-- BOTTOM CONTENT -->
+  <div class="max-w-7xl mx-auto px-6 pt-5 flex flex-col md:flex-row justify-between items-center text-sm text-green-400">
 
-      <div class="flex gap-6 mt-3 md:mt-0">
-        <a href="#" class="hover:text-white">Terms</a>
-        <a href="#" class="hover:text-white">Privacy</a>
-        <a href="#" class="hover:text-white">Contact</a>
-      </div>
+    <p>© 2026 RouteX. All rights reserved.</p>
 
+    <div class="flex gap-6 mt-3 md:mt-0">
+      <a href="#" class="hover:text-white">Terms</a>
+      <a href="#" class="hover:text-white">Privacy</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
     </div>
+
   </div>
 
 </footer>
+
 
 <script>
 const menuBtn = document.getElementById("menuBtn");
@@ -286,7 +326,15 @@ const mobileMenu = document.getElementById("mobileMenu");
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
+document.querySelectorAll("#tours button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert("Tour details coming soon!");
+  });
+});
 </script>
-  
+
+
 </body>
 </html>
+
+
