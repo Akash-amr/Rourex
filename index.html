@@ -3,338 +3,860 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>RouteX Travel</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
-html {
-  scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
+
+body {
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE STYLE */
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background: white;
+        transition: 0.3s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    .phone {
+        display: none;
+    }
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(16, 141, 20);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.phone {
+    color: green;
+    font-weight: bold;
+}
+
+/* HERO - FULL SCREEN + CENTER */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+                url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+
+.hero-content {
+    max-width: 700px;
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.hero-content h1 span {
+    color: #7CFC00; /* green highlight */
+}
+
+.hero-content p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.hero-content button {
+    background: #7CFC00;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.hero button:hover {
+    background: #21542f;
+}
+
+
+
+/* ABOUT */
+/* SECTION */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 60px;
+    gap: 50px;
+}
+
+/* LEFT IMAGES */
+.about-images {
+    position: relative;
+    width: 50%;
+}
+
+.about-images img {
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Individual image positions */
+.img1 {
+    width: 220px;
+    height: 260px;
+}
+
+.img2 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 20px;
+    left: 250px;
+}
+
+.img3 {
+    width: 260px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 120px;
+}
+
+/* Experience box */
+
+.about-images {
+    position: relative; /* important */
+}
+
+/* EXPERIENCE BOX STYLE */
+.experience {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #6bcf2c;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 140px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .experience {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
+/* RIGHT CONTENT */
+.about-content {
+    width: 50%;
+}
+
+.about-content h5 {
+    color: #6bcf2c;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.about-content h1 {
+    font-size: 40px;
+    color: #0f3d2e;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* FEATURES */
+.features {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.feature span {
+    color: rgb(15, 157, 15);
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.feature h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #040404;
+}
+
+.feature ul {
+    margin-left: 15px;
+}
+
+.feature ul li {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background: #6bcf2c;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* SERVICES */
+/* SECTION */
+.services {
+    padding: 80px 60px;
+    background: linear-gradient(to right, #eef3ee, #f8f9f8);
+}
+
+/* HEADING */
+.services-header {
+    margin-bottom: 50px;
+}
+
+.services-header h5 {
+    color: #6bcf2c;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.services-header h1 {
+    font-size: 42px;
+    color: #0f3d2e;
+}
+
+/* CARDS */
+.services-container {
+    display: flex;
+    gap: 30px;
+}
+
+/* CARD */
+.service-card {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* ICON */
+.icon {
+    width: 70px;
+    height: 70px;
+    background: #6bcf2c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    color: white;
+}
+
+/* TEXT */
+.service-card h3 {
+    color: #0f3d2e;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .services-container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+/* FOOTER */
+
+/* FOOTER */
+.footer {
+    background: #0d4d3b;
+    color: #fff;
+    padding: 60px 60px 20px;
+}
+
+/* GRID */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* COLUMN */
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* LOGO */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.logo i {
+    color: #6bcf2c;
+    margin-right: 8px;
+}
+
+/* TEXT */
+.footer-col p {
+    color: #cbd5c0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* SOCIAL */
+.social i {
+    font-size: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social i:hover {
+    color: #6bcf2c;
+}
+
+/* HEADINGS */
+.footer-col h3 {
+    margin-bottom: 20px;
+}
+
+/* LINKS */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #cbd5c0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-col ul li i {
+    color: #6bcf2c;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 40px;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #cbd5c0;
+}
+
+.footer-links a {
+    margin-left: 20px;
+    color: #cbd5c0;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #6bcf2c;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+
+
+
+/* GLOBAL MOBILE FIX */
+@media (max-width: 768px) {
+
+    /* GENERAL */
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 40px 20px !important;
+    }
+
+    h1 {
+        font-size: 28px !important;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /* HEADER */
+    header {
+        padding: 15px 20px;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-images {
+        width: 100%;
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+    /* IMAGE GRID FIX */
+    .about-images img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* EXPERIENCE BOX */
+    .experience {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* FEATURES */
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        flex-direction: column;
+    }
+
+    /* SERVICES */
+    .services-container {
+        flex-direction: column;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+    }
+}
+
+
+
 </style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
 
-<body class="bg-gray-50">
+<body>
 
-
-<body class="bg-gray-50 font-[Poppins]">
-
-  
 <!-- HEADER -->
-<header class="bg-white shadow">
-<div class="max-w-7xl mx-auto flex justify-between items-center p-5">
 
-<h1 class="text-2xl font-bold text-green-600">RouteX</h1>
 
-<nav class="space-x-6 hidden md:block">
-<a href="#home" class="text-gray-700 hover:text-green-600">Home</a>
-<a href="#about" class="text-gray-700 hover:text-green-600">About</a>
-<a href="#tours" class="text-gray-700 hover:text-green-600">Tours</a>
-<a href="#destinations" class="text-gray-700 hover:text-green-600">Destinations</a>
-<a href="#contact" class="text-gray-700 hover:text-green-600">Contact</a>
-</nav>
+<header>
+    <div class="logo">RouteX</div>
 
-<button id="menuBtn" class="md:hidden text-2xl">☰</button>
+    <!-- MENU ICON -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class='bx bx-menu'></i>
+    </div>
 
-<button class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 hidden md:block">
-Book Now
-</button>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Visa</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-</div>
-
-<div id="mobileMenu" class="hidden flex flex-col p-4 space-y-3 bg-white md:hidden">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#tours">Tours</a>
-<a href="#contact">Contact</a>
-</div>
+    <div class="phone">(307) 555-0133</div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="relative h-[500px]">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-class="absolute w-full h-full object-cover" alt="Beach">
 
-<div class="absolute inset-0 bg-black/40"></div>
-
-<div class="relative flex flex-col justify-center items-center text-center h-full text-white px-4">
-
-<h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-<span class="block">Journey with Confidence</span>
-<span class="block">
-<span class="text-green-400">Migrate</span> with Us
-</span>
-</h1>
-
-<p class="max-w-xl text-gray-200 mb-6 text-sm md:text-base">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet risus nunc.
-</p>
-
-<button class="bg-green-500 px-8 py-3 rounded-full font-semibold hover:bg-green-600 transition">
-Learn More →
-</button>
-
-</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Journey with Confidence <br>
+            <span>Migrate</span> with Us
+        </h1>
+        <p>
+            Your trusted partner for travel, migration, and unforgettable journeys.
+        </p>
+        <button>Learn More →</button>
+    </div>
 </section>
+
+
+
+
+
+
+
 
 <!-- ABOUT -->
-<section id="about" class="max-w-7xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-10">
+<section class="about">
 
-<div class="grid grid-cols-2 gap-4">
-<img src="https://picsum.photos/400/300" class="rounded-lg shadow" alt="">
-<img src="https://picsum.photos/401/300" class="rounded-lg shadow" alt="">
-<img src="https://picsum.photos/402/300" class="rounded-lg shadow col-span-2" alt="">
-</div>
+    <!-- LEFT SIDE -->
+    <!--div class="about-images"-->
+<div class="about-images grid grid-cols-2 gap-4">
+        <img src="https://picsum.photos/400/300" class="rounded-lg shadow" alt="">
+        <img src="https://picsum.photos/401/300" class="rounded-lg shadow" alt="">
+        <img src="https://picsum.photos/402/300" class="rounded-lg shadow col-span-2" alt="">
+        <img src="https://picsum.photos/403/300" class="rounded-lg shadow" alt="">
 
-
-
-
-<div class="flex flex-col justify-center">
-
-  <!-- LABEL -->
-  <span class="text-green-600 font-semibold uppercase tracking-wide text-sm mb-3">
-    About
-  </span>
-
-  <!-- heading -->
-
-<h2 class="text-4xl font-bold mb-4 leading-tight">
-<span class="block text-green-700">Unknown Wanderlist</span>
-<span class="block text-green-700 ">
-Your Journey Into
-</span>
-</h2>
-
-
-
-  <!-- PARAGRAPH (MATCHED) -->
-  <p class="text-gray-500 text-base leading-relaxed mb-6">
-    RouteX is your trusted travel companion, dedicated to turning every journey into a memorable experience.
-  </p>
-
-  <!-- FEATURES -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-
-    <div>
-      <h4 class="text-base font-semibold mb-2 text-green-700">
-        ✔ Safety Guides
-      </h4>
-      <ul class="text-gray-500 text-base space-y-1 leading-relaxed">
-        <li>Expert travel safety tips</li>
-        <li>24/7 support</li>
-        <li>Verified destinations</li>
-      </ul>
+        <!-- EXPERIENCE BOX -->
+    <div class="experience">
+        <h2>10+</h2>
+        <p>Years Of Experience</p>
     </div>
 
-    <div>
-      <h4 class="text-base font-semibold mb-2 text-green-700">
-        ✔ Passport Assistance
-      </h4>
-      <ul class="text-gray-500 text-base space-y-1 leading-relaxed">
-        <li>Easy process</li>
-        <li>Quick support</li>
-        <li>Expert help</li>
-      </ul>
+</div>
+
+    <!-- RIGHT SIDE -->
+    <div class="about-content">
+        <h5>ABOUT US</h5>
+        <h1>Unknown Wanderlust<br>Your Journey into</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac ante sed tincidunt.</p>
+
+        <div class="features">
+
+    <!-- SAFETY GUIDELINES -->
+    <div class="feature">
+        <span>✔</span>
+        <div>
+            <h3>Safety Guidelines</h3>
+            <ul>
+                <li>24/7 emergency travel support</li>
+                <li>Verified and safe travel partners</li>
+                <li>Real-time travel alerts & updates</li>
+            </ul>
+        </div>
     </div>
 
-  </div>
-<button class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 w-fit">
-Explore More
-</button>
+    <!-- PASSPORT ASSISTANCE -->
+    <div class="feature">
+        <span>✔</span>
+        <div>
+            <h3>Passport Assistance</h3>
+            <ul>
+                <li>Guidance for new passport applications</li>
+                <li>Fast-track renewal support</li>
+                <li>Document verification help</li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
+        <a href="#" class="btn">Read More →</a>
+    </div>
 
-
-
-</div>
 </section>
 
-<!-- TOURS -->
-<section id="tours" class="bg-gradient-to-br from-green-50 via-white to-green-100 py-24">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<span class="text-green-600 font-semibold uppercase tracking-wide mb-2">
-Our Services
-</span>
-
-<h2 class="text-4xl font-bold mb-4 leading-tight">
-<span class="block text-green-700">Adventure Unleashed</span>
-<span class="block text-green-700">
-Discover your next
-</span>
-</h2>
+        
 
 
+<!-- SERVICES -->
+<section class="services">
 
-
-<div class="grid md:grid-cols-3 gap-10">
-
-  <!-- CARD 1 -->
-  <div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
-
-    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-100 mb-5">
-      <i class="fas fa-utensils text-green-600 text-2xl"></i>
+    <div class="services-header">
+        <h5>OUR SERVICES ✈️</h5>
+        <h1>Adventure Unleashed<br>Discover Your Next</h1>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-3 text-green-700">
-      Food & Wine Tours
-    </h3>
+    <div class="services-container">
 
-    <p class="text-gray-500 text-base leading-relaxed">
-      Savor the world through its flavors. Discover authentic cuisines, local delicacies, and exquisite wines with curated food and wine tours designed for unforgettable experiences.
-    </p>
+        <div class="service-card">
+            <div class="icon">🌍</div>
+            <h3>Food and Wine Tours</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet.</p>
+        </div>
 
-  </div>
+        <div class="service-card">
+            <div class="icon">📄</div>
+            <h3>Travel Opportunities</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet.</p>
+        </div>
 
-  <!-- CARD 2 -->
-  <div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
+        <div class="service-card">
+            <div class="icon">🧳</div>
+            <h3>Solo Travel Planning</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet.</p>
+        </div>
 
-    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-100 mb-5">
-      <i class="fas fa-map-marked-alt text-green-600 text-2xl"></i>
     </div>
 
-    <h3 class="text-2xl font-semibold mb-3 text-green-700">
-      Travel Opportunities
-    </h3>
+</section>
 
-    <p class="text-gray-500 text-base leading-relaxed">
-      Discover curated travel experiences—from adventure and culture to relaxing getaways—with seamless planning and exclusive deals.
-    </p>
 
-  </div>
 
-  <!-- CARD 3 -->
-  <div class="bg-white p-8 rounded-3xl shadow hover:-translate-y-3 transition text-center">
 
-    <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-green-100 mb-5">
-      <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-col">
+            <div class="logo">
+                <i class='bx bx-paper-plane'></i> RouteX
+            </div>
+            <p>
+                Corporate business typically refers to large-scale enterprises 
+                or organizations operating globally.
+            </p>
+
+            <div class="social">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-pinterest'></i>
+                <i class='bx bxl-linkedin'></i>
+            </div>
+        </div>
+
+        <!-- SERVICE MENU -->
+        <div class="footer-col">
+            <h3>Service Menu</h3>
+            <ul>
+                <li><i class='bx bx-check'></i> Mistakes To Avoid</li>
+                <li><i class='bx bx-check'></i> Your Startup</li>
+                <li><i class='bx bx-check'></i> Knew About Fonts</li>
+                <li><i class='bx bx-check'></i> Knew About Fonts</li>
+            </ul>
+        </div>
+
+        <!-- USEFUL LINKS -->
+        <div class="footer-col">
+            <h3>Useful Link</h3>
+            <ul>
+                <li><i class='bx bx-chevron-right'></i> Latest News</li>
+                <li><i class='bx bx-chevron-right'></i> Careers</li>
+                <li><i class='bx bx-chevron-right'></i> General Inquiries</li>
+                <li><i class='bx bx-chevron-right'></i> Case Studies</li>
+            </ul>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="footer-col">
+            <h3>Gallery</h3>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="rounded-lg">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="rounded-lg">
+                <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98" class="rounded-lg">
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" class="rounded-lg">
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" class="rounded-lg">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" class="rounded-lg">
+            </div>
+        </div>
+
     </div>
 
-    <h3 class="text-2xl font-semibold mb-3 text-green-700">
-      Solo Travel Planning
-    </h3>
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>©️ RRDevs 2024 | All Rights Reserved</p>
 
-    <p class="text-gray-500 text-base leading-relaxed">
-      Plan your solo adventures with confidence—discover safe destinations, flexible itineraries, and experiences designed just for you.
-    </p>
-
-  </div>
-
-</div>
-
-
-
-<!-- GAP BETWEEN CONTENT & FOOTER -->
-<div class="mt-20"></div>
-
-
-    <!-- Footer -->
-  <footer class="bg-green-900 text-green-100 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pt-14 pb-6">
-  <!-- MAIN CONTENT -->
-<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-5">
-    <!-- LOGO + ABOUT -->
-    <div>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="text-3xl">✈️</div>
-        <h2 class="text-2xl font-bold text-white">RouteX</h2>
-      </div>
-
-      <p class="text-green-200 text-sm leading-relaxed mb-4">
-        Corporate business typically refers to large-scale enterprise organizations.
-      </p>
-
-      <div class="flex gap-4 text-lg">
-        <i class="fab fa-facebook-f hover:text-white cursor-pointer"></i>
-        <i class="fab fa-instagram hover:text-white cursor-pointer"></i>
-        <i class="fab fa-pinterest hover:text-white cursor-pointer"></i>
-        <i class="fab fa-linkedin-in hover:text-white cursor-pointer"></i>
-      </div>
+        <div class="footer-links">
+            <a href="#">Terms & Condition</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
     </div>
-
-    <!-- SERVICE MENU -->
-    <div>
-      <h3 class="text-lg font-semibold text-white mb-4">Service Menu</h3>
-      <ul class="space-y-2 text-green-200">
-        <li>✔ Mistakes To Avoid</li>
-        <li>✔ Your Startup</li>
-        <li>✔ Know About Fonts</li>
-        <li>✔ Know About Fonts</li>
-      </ul>
-    </div>
-
-    <!-- USEFUL LINKS -->
-    <div>
-      <h3 class="text-lg font-semibold text-white mb-4">Useful Link</h3>
-      <ul class="space-y-2 text-green-200">
-        <li>› Latest News</li>
-        <li>› Careers</li>
-        <li>› General Inquiries</li>
-        <li>› Case Studies</li>
-      </ul>
-    </div>
-
-    <!-- GALLERY -->
-     <div>
-
- <h3 class="text-white font-semibold mb-4">Gallery</h3>
-
-<div class="grid grid-cols-3 gap-2">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" class="rounded-lg">
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e" class="rounded-lg">
-</div>
-
-</div>
-
-
-<!-- BOTTOM -->
-<div class="border-t border-green-800 mt-10 pt-5 px-6">
-  <div class="max-w-7xl mx-auto flex items-center text-sm text-green-400">
-
-    <!-- LEFT -->
-    <p class="whitespace-nowrap">
-      © 2026 RouteX. All rights reserved.
-    </p>
-
-    <!-- RIGHT -->
-    <div class="flex gap-6 whitespace-nowrap ml-auto">
-      <a href="#" class="hover:text-white transition">Terms</a>
-      <a href="#" class="hover:text-white transition">Privacy</a>
-      <a href="#contact" class="hover:text-white transition">Contact</a>
-    </div>
-
-  </div>
-</div>
-
-
 
 </footer>
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
 
-menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
-});
-document.querySelectorAll("#tours button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    alert("Tour details coming soon!");
-  });
+
+
+<script>
+const menu = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+menu.addEventListener("click", () => {
+    navbar.classList.toggle("active");
 });
 </script>
 
-
 </body>
 </html>
-
-
