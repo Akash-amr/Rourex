@@ -6,7 +6,7 @@
 <title>RouteX Travel</title>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <style>
-* {
+•⁠  ⁠{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -380,9 +380,6 @@ nav ul li a {
 
 
 
-
-/* FOOTER */
-
 /* FOOTER */
 .footer {
     background: #0d4d3b;
@@ -604,21 +601,78 @@ nav ul li a {
     }
 
     /* FOOTER */
+    .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 40px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #cbd5c0;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px;
+        overflow: hidden;
+    }
+
     .footer-container {
+        display: flex;
         flex-direction: column;
-        gap: 30px;
+        width: 100%;
+        gap: 25px;
+    }
+
+    .footer-col {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .footer-col ul li {
+        word-break: break-word;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-bottom {
+        display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
         text-align: center;
+        gap: 12px;
     }
 
     .footer-links {
-        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-links a {
+        margin: 0;
     }
 }
+}
+}html, body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+.footer {
+    padding: 40px 20px 10px;
+}
+
+}
+
 
 
 
@@ -631,6 +685,7 @@ nav ul li a {
 
 
 <header>
+   
     <div class="logo">RouteX</div>
 
     <!-- MENU ICON -->
