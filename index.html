@@ -5,12 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RouteX Travel</title>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<img src="..." class="rounded-lg shadow col-span-2">
 <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
 •⁠  ⁠{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -18,6 +22,16 @@ body {
 }
 
 /* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
 
 
 /* MOBILE MENU */
@@ -37,17 +51,45 @@ body {
     .menu-toggle {
         display: block;
     }
+    @media (max-width: 768px) {
+    header {
+        position: relative;
+        padding: 15px 20px;
+    }
 
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+    @media (max-width: 768px) {
     nav {
         position: absolute;
         top: 70px;
         left: -100%;
         width: 100%;
         background: white;
-        transition: 0.3s;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: 0.3s ease;
+        z-index: 999;
+        padding: 20px 0;
     }
 
+    nav.active {
+        left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .help {
+        display: none;
+    }
+}
     nav.active {
         left: 0;
     }
@@ -93,8 +135,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
-    font-weight: 500;
+    color: #0f3d2e;
+    font-weight: 600;
 }
 
 .phone {
@@ -114,17 +156,20 @@ nav ul li a {
     color: white;
     padding: 20px;
 }
-
+.hero h1 {
+    font-size: 36px;
+}
 
 .hero-content {
-    max-width: 700px;
+    max-width: 1000px;
+    width: 100%;
 }
 
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: 58px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .hero-content h1 span {
@@ -156,6 +201,13 @@ nav ul li a {
 
 /* ABOUT */
 /* SECTION */
+.about-content h1,
+.about-content h3,
+.services-header h1,
+.service-card h3,
+.feature h3 {
+    color: #0f3d2e !important;
+}
 .about {
     display: flex;
     align-items: center;
@@ -168,61 +220,93 @@ nav ul li a {
 .about-images {
     position: relative;
     width: 50%;
+    min-height: 620px;
 }
 
-.about-images img {
-    border-radius: 15px;
-    object-fit: cover;
-}
-
-/* Individual image positions */
-.img1 {
-    width: 220px;
+.img1,
+.img2,
+.img3 {
+    width: 320px;
     height: 260px;
+    object-fit: cover;
+    border-radius: 22px;
+    position: absolute;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+    image-rendering: auto;
+    filter: contrast(105%) brightness(102%);
+}
+
+.img1 {
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .img2 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 20px;
-    left: 250px;
+    top: 35px;
+    left: 240px;
+    z-index: 2;
 }
 
 .img3 {
-    width: 260px;
-    height: 200px;
-    position: absolute;
-    top: 200px;
-    left: 120px;
+    top: 220px;
+    left: 110px;
+    width: 320px;
+    height: 260px;
+    z-index: 3;
 }
 
-/* Experience box */
-
-.about-images {
-    position: relative; /* important */
-}
-
-/* EXPERIENCE BOX STYLE */
 .experience {
     position: absolute;
-    bottom: 20px;
+    top: 360px;
     left: 20px;
-    background: #6bcf2c;
+    background: rgba(107, 207, 44, 0.95);
+    backdrop-filter: blur(10px);
     color: white;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 28px 22px;
+    border-radius: 18px;
     text-align: center;
     width: 140px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 5;
 }
 
+.experience h2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.experience p {
+    font-size: 18px;
+    line-height: 1.4;
+}
 /* MOBILE FIX */
 @media (max-width: 768px) {
-    .experience {
-        position: static;
+    .about-images {
         width: 100%;
-        margin-top: 10px;
+        min-height: 430px;
+        position: relative;
+    }
+
+    .experience {
+        position: absolute !important;
+        top: 250px;
+        left: 10px;
+        width: 110px;
+        padding: 15px;
+        z-index: 10;
+    }
+
+    .experience h2 {
+        font-size: 28px;
+    }
+
+    .experience p {
+        font-size: 12px;
+        line-height: 1.3;
     }
 }
 
@@ -239,9 +323,8 @@ nav ul li a {
 }
 
 .about-content h1 {
-    font-size: 40px;
-    color: #0f3d2e;
-    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: 700;
 }
 
 .about-content p {
@@ -320,8 +403,8 @@ nav ul li a {
 }
 
 .services-header h1 {
-    font-size: 42px;
-    color: #0f3d2e;
+    font-size: 52px;
+    font-weight: 700;
 }
 
 /* CARDS */
@@ -386,7 +469,10 @@ nav ul li a {
     color: #fff;
     padding: 60px 60px 20px;
 }
-
+.footer-col h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
 /* GRID */
 .footer-container {
     display: flex;
@@ -406,12 +492,14 @@ nav ul li a {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    margin-left:40px;
+    
 }
 
 .logo i {
     color: #6bcf2c;
     margin-right: 8px;
-}
+}   
 
 /* TEXT */
 .footer-col p {
@@ -419,15 +507,18 @@ nav ul li a {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
+    margin-left:40px;
 }
 
 /* SOCIAL */
 .social i {
     font-size: 18px;
-    margin-right: 12px;
     cursor: pointer;
     transition: 0.3s;
+    margin-left:40px;
+     gap: 6px;
 }
+
 
 .social i:hover {
     color: #6bcf2c;
@@ -461,6 +552,7 @@ nav ul li a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin-right:40px;
 }
 
 .gallery img {
@@ -468,6 +560,7 @@ nav ul li a {
     height: 70px;
     object-fit: cover;
     border-radius: 8px;
+    margin-right:40px;
 }
 
 /* BOTTOM BAR */
@@ -475,17 +568,21 @@ nav ul li a {
     border-top: 1px solid rgba(255,255,255,0.2);
     margin-top: 40px;
     padding-top: 15px;
+    padding-left: 20px;   /* move 2024 text left nicely */
+    padding-right: 20px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 13px;
     color: #cbd5c0;
+    margin-left:20px;
 }
 
 .footer-links a {
     margin-left: 20px;
     color: #cbd5c0;
     text-decoration: none;
+    margin-right: 20px;
 }
 
 .footer-links a:hover {
@@ -576,12 +673,7 @@ nav ul li a {
     }
 
     /* EXPERIENCE BOX */
-    .experience {
-        position: static;
-        width: 100%;
-        margin-top: 10px;
-    }
-
+    
     /* FEATURES */
     .features {
         grid-template-columns: 1fr;
@@ -612,14 +704,14 @@ nav ul li a {
     font-size: 13px;
     color: #cbd5c0;
 }
-
+}
 /* MOBILE FIX */
 @media (max-width: 768px) {
     .footer {
         padding: 40px 20px;
         overflow: hidden;
     }
-
+    
     .footer-container {
         display: flex;
         flex-direction: column;
@@ -631,11 +723,11 @@ nav ul li a {
         width: 100%;
         min-width: 100%;
     }
-
+    
     .footer-col ul li {
         word-break: break-word;
     }
-
+    
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -658,9 +750,10 @@ nav ul li a {
     .footer-links a {
         margin: 0;
     }
+    
+
 }
-}
-}html, body {
+html, body {
     overflow-x: hidden;
 }
 
@@ -671,7 +764,7 @@ body {
     padding: 40px 20px 10px;
 }
 
-}
+
 
 
 
@@ -686,7 +779,7 @@ body {
 
 <header>
    
-    <div class="logo">RouteX</div>
+    <div class="logo"><i class='bx bx-paper-plane'></i>RouteX</div>
 
     <!-- MENU ICON -->
     <div class="menu-toggle" id="menu-toggle">
@@ -695,15 +788,20 @@ body {
 
     <nav id="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Visa</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">HOME<i class="bx bx-chevron-down"></i></a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">STORY <i class="bx bx-chevron-down"></i></a></li>
+            <li><a href="#">VISA <i class="bx bx-chevron-down"></i></a></li>
+            <li><a href="#">BLOG <i class="bx bx-chevron-down"></i></a></li>
+            <li><a href="#">PAGE <i class="bx bx-chevron-down"></i></a></li>
+            <li><a href="#">CONTACT</a></li>
         </ul>
     </nav>
 
-    <div class="phone">(307) 555-0133</div>
+    <div class="help">
+    <span><i class="bi bi-chat-text"></i><sub><i class="bi bi-chat-text"></i> Need help?</span><br>
+    <strong>(307) 555-0133</strong>
+  </div>
 </header>
 
 <!-- HERO -->
@@ -715,7 +813,8 @@ body {
             <span>Migrate</span> with Us
         </h1>
         <p>
-            Your trusted partner for travel, migration, and unforgettable journeys.
+            Explore the world with trusted travel guidance, seamless visa support, and unforgettable experiences. <br>
+    We make every journey safe, simple, and filled with lasting memories.
         </p>
         <button>Learn More →</button>
     </div>
@@ -733,23 +832,22 @@ body {
 
     <!-- LEFT SIDE -->
     <!--div class="about-images"-->
-<div class="about-images grid grid-cols-2 gap-4">
-        <img src="https://picsum.photos/400/300" class="rounded-lg shadow" alt="">
-        <img src="https://picsum.photos/401/300" class="rounded-lg shadow" alt="">
-        <img src="https://picsum.photos/402/300" class="rounded-lg shadow col-span-2" alt="">
-        <img src="https://picsum.photos/403/300" class="rounded-lg shadow" alt="">
+    
+<div class="about-images">
+<img src="https://picsum.photos/id/1060/800/600" class="img1" alt="office travel 1">
 
-        <!-- EXPERIENCE BOX -->
+<img src="https://picsum.photos/id/1040/800/600" class="img2" alt="office travel 2">
+
+<img src="https://picsum.photos/id/1033/800/600" class="img3" alt="office travel 3">
+
     <div class="experience">
         <h2>10+</h2>
         <p>Years Of Experience</p>
     </div>
-
 </div>
-
     <!-- RIGHT SIDE -->
     <div class="about-content">
-        <h5>ABOUT US</h5>
+        <h5>ABOUT US ✈️</h5>
         <h1>Unknown Wanderlust<br>Your Journey into</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nunc. Duis egestas ac ante sed tincidunt.</p>
 
@@ -757,27 +855,27 @@ body {
 
     <!-- SAFETY GUIDELINES -->
     <div class="feature">
-        <span>✔</span>
+        <span>✅</span>
         <div>
             <h3>Safety Guidelines</h3>
-            <ul>
-                <li>24/7 emergency travel support</li>
-                <li>Verified and safe travel partners</li>
-                <li>Real-time travel alerts & updates</li>
-            </ul>
+           
+                <p>
+               Travel confidently with 24/7 emergency support, verified accommodations, 
+               safe transport options, and real-time alerts to ensure a secure journey.
+                </p>
+            
         </div>
     </div>
 
     <!-- PASSPORT ASSISTANCE -->
     <div class="feature">
-        <span>✔</span>
+        <span>✅</span>
         <div>
             <h3>Passport Assistance</h3>
-            <ul>
-                <li>Guidance for new passport applications</li>
-                <li>Fast-track renewal support</li>
-                <li>Document verification help</li>
-            </ul>
+            <p>
+Ensure stress-free travel with expert passport application support, quick renewals, 
+and secure document verification services.
+</p>
         </div>
     </div>
 
@@ -804,19 +902,22 @@ body {
         <div class="service-card">
             <div class="icon">🌍</div>
             <h3>Food and Wine Tours</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet.</p>
+            <p>Discover the taste of every destination through curated vineyard tours, gourmet dining, 
+                local cuisine experiences, and exclusive wine tastings guided by travel and culinary experts.</p>
         </div>
 
         <div class="service-card">
             <div class="icon">📄</div>
             <h3>Travel Opportunities</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet.</p>
+            <p>Discover endless travel opportunities with curated destinations, premium tour packages, 
+               expert visa support, and personalized planning for your perfect journey.</p>
         </div>
 
         <div class="service-card">
             <div class="icon">🧳</div>
             <h3>Solo Travel Planning</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rcus nun Lorem ipsum dolor sit amet.</p>
+            <p>Experience the freedom of solo travel with tailored itineraries, secure stays, 
+           local support, and flexible plans for safe and memorable adventures.</p>
         </div>
 
     </div>
@@ -905,12 +1006,14 @@ body {
 
 
 <script>
+
 const menu = document.getElementById("menu-toggle");
 const navbar = document.getElementById("navbar");
 
 menu.addEventListener("click", () => {
     navbar.classList.toggle("active");
 });
+
 </script>
 
 </body>
