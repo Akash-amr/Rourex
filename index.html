@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RouteX Travel</title>
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<img src="..." class="rounded-lg shadow col-span-2">
 <style>
     
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-* {
+•⁠  ⁠{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -283,11 +284,13 @@ nav ul li a {
 .experience h2 {
     font-size: 42px;
     font-weight: 700;
-}
+    
+} 
 
 .experience p {
     font-size: 18px;
     line-height: 1.4;
+    color: white;
 }
 /* MOBILE FIX */
 @media (max-width: 768px) {
@@ -778,7 +781,89 @@ body {
 .footer {
     padding: 40px 20px 10px;
 }
+/* ===== MOBILE CLEAN FIX ===== */
+@media (max-width: 768px) {
 
+    /* REMOVE LEFT SHIFT */
+    .logo,
+    .footer-col p,
+    .social i {
+        margin-left: 0 !important;
+        text-align: center;
+    }
+
+    /* CENTER ALL FOOTER CONTENT */
+    .footer-col {
+        text-align: center;
+        align-items: center;
+    }
+
+    /* SOCIAL ICON CENTER */
+    .social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* FIX GALLERY */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-right: 0 !important;
+    }
+
+    .gallery img {
+        height: 90px;
+        margin: 0 !important;
+    }
+
+    /* FIX FOOTER BOTTOM */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        margin-left: 0 !important;
+        padding: 15px 10px;
+    }
+
+    /* FIX LINKS */
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .footer-links a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    /* REMOVE EXTRA SPACE */
+    .footer {
+        padding: 30px 15px;
+    }
+
+    /* ABOUT IMAGE FIX */
+    .about-images {
+        min-height: auto;
+    }
+
+    .img1, .img2, .img3 {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* EXPERIENCE BOX FIX */
+    .experience {
+        position: relative !important;
+        top: auto;
+        left: auto;
+        margin: 10px auto;
+    }
+}
 
 
 
